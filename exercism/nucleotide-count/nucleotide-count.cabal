@@ -1,0 +1,36 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 6b448b84b498225b0f1275d5f1d45ed973abcce6c7be3a3dc1f7e3b7cd62a29f
+
+name:           nucleotide-count
+version:        1.3.0.5
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+    , containers
+  exposed-modules:
+      DNA
+  other-modules:
+      Paths_nucleotide_count
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , containers
+    , hspec
+    , nucleotide-count
+  other-modules:
+      Paths_nucleotide_count
+  default-language: Haskell2010

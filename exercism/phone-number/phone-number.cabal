@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: cc1002d0313d34717a592aef234f14870d4aaf0d38df7f913ff08db286dcb2c3
+
+name:           phone-number
+version:        1.4.0.5
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      Phone
+  other-modules:
+      Paths_phone_number
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , phone-number
+  other-modules:
+      Paths_phone_number
+  default-language: Haskell2010
