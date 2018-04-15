@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 3818e93c91a73fd0ef68dd1a4f75cda24dfffa6246673922b8c65d691ebad85e
+
+name:           robot-simulator
+version:        2.2.0.5
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      Robot
+  other-modules:
+      Paths_robot_simulator
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , robot-simulator
+  other-modules:
+      Paths_robot_simulator
+  default-language: Haskell2010
