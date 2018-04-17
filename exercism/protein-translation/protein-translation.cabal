@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: e4f2500ed45b144400f4428991a0b81c80b980084fbd9c5945e24faefd333371
+
+name:           protein-translation
+version:        1.1.0.1
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      ProteinTranslation
+  other-modules:
+      Paths_protein_translation
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , protein-translation
+  other-modules:
+      Paths_protein_translation
+  default-language: Haskell2010
