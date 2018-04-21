@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 73b74f4802d938e20ba19b39161db8883af94464cd0802ad603db5973a350462
+
+name:           prime-factors
+version:        1.1.0.4
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      PrimeFactors
+  other-modules:
+      Paths_prime_factors
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , prime-factors
+  other-modules:
+      Paths_prime_factors
+  default-language: Haskell2010
