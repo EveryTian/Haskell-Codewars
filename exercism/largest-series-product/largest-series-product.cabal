@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 2deb339a12375ac59a2f1a137dc569f2159605bba1e23435d76da5c13c49741e
+
+name:           largest-series-product
+version:        1.1.0.4
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      Series
+  other-modules:
+      Paths_largest_series_product
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , largest-series-product
+  other-modules:
+      Paths_largest_series_product
+  default-language: Haskell2010
