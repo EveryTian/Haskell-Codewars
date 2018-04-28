@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 0f01f02e006eb7be2d5c3e70c6fde1666506a23d2337ebf338e17af0d7cc7da0
+
+name:           pythagorean-triplet
+version:        0.1.0.2
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      Triplet
+  other-modules:
+      Paths_pythagorean_triplet
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , pythagorean-triplet
+  other-modules:
+      Paths_pythagorean_triplet
+  default-language: Haskell2010
