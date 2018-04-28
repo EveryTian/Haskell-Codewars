@@ -1,0 +1,36 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fa949cb1d817ecb041f6d3cedaef2f86d03c78013a70987e0d2c02eaea4b704a
+
+name:           saddle-points
+version:        1.1.0.4
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      array
+    , base
+  exposed-modules:
+      Matrix
+  other-modules:
+      Paths_saddle_points
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      array
+    , base
+    , hspec
+    , saddle-points
+  other-modules:
+      Paths_saddle_points
+  default-language: Haskell2010
