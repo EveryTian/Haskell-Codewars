@@ -1,5 +1,3 @@
--- Have not got the idea of the test cases.
-
 module Clock (clockHour, clockMin, fromHourMin, toString) where
 
 data Clock = Clock {
