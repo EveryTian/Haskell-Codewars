@@ -1,0 +1,34 @@
+-- This file has been generated from package.yaml by hpack version 0.20.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: d4cb46206111e1a360ba52d4e319d0e5eb54fbf8d9037a69c14f835d8ff7e6ab
+
+name:           word-count
+version:        1.2.0.5
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base
+  exposed-modules:
+      WordCount
+  other-modules:
+      Paths_word_count
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , word-count
+  other-modules:
+      Paths_word_count
+  default-language: Haskell2010
