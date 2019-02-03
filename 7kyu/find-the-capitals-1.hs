@@ -9,5 +9,5 @@ capitals = f 0
     where f :: Int -> String -> [Int]
           f _ "" = []
           f index (x:xs)
-              | isUpper x = index:(f (index + 1) xs)
+              | isUpper x = index : f (index + 1) xs
               | otherwise = f (index + 1) xs

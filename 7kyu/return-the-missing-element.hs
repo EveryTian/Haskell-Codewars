@@ -3,4 +3,4 @@
 module MissingElement where
 
 getMissingElement :: [Int] -> Int
-getMissingElement xs = [i | i <- [0..9], i `notElem` xs] !! 0
+getMissingElement xs = head [i | i <- [0..9], i `notElem` xs]

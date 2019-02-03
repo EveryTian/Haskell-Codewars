@@ -5,7 +5,7 @@ module NaughtyNice where
 type Warrior = (String, Bool)
 
 getNiceNames :: [Warrior] -> [String]
-getNiceNames = map (\x -> fst x) . filter (\x -> snd x)
+getNiceNames = map fst . filter snd
 
 getNaughtyNames :: [Warrior] -> [String]
-getNaughtyNames = map (\x -> fst x) . filter (\x -> not $ snd x)
+getNaughtyNames = map fst . filter (not . snd)

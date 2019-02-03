@@ -1,7 +1,9 @@
 -- https://www.codewars.com/kata/isograms
 
 module Isogram where
-import Data.List
-import Data.Char
+
+import Data.List (sort, group)
+import Data.Char (toUpper)
+
 isIsogram :: String -> Bool
-isIsogram s = length [1 | y <- (group . sort . map toUpper) s, length y /= 1] == 0
+isIsogram s = null [1 | y <- (group . sort . map toUpper) s, length y /= 1]
