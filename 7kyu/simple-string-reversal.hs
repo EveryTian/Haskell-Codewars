@@ -4,7 +4,7 @@ module SimpleReversal where
 
 solve :: String -> String
 solve ys = let numList = map length $ words ys
-               string = reverse $ filter (\ x -> x /= ' ') ys
+               string = reverse $ filter (/= ' ') ys
            in reverse $ f string numList ""
            where f "" _ r = r
                  f _ [] r = r

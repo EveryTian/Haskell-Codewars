@@ -4,4 +4,4 @@ module Codewars.Kata.PaddedNumbers where
 
 solution :: Int -> String
 solution n = let str = show n
-             in "Value is " ++ take (5 - length str) (repeat '0') ++ str
+             in "Value is " ++ replicate (5 - length str) '0' ++ str

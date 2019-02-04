@@ -4,6 +4,6 @@ module Codewars.G964.Longest where
 
 import Data.List (group, sort)
 
-longest :: [Char] -> [Char] -> [Char]
+longest :: String -> String -> String
 longest s1 s2 = let s = sort $ s1 ++ s2
                 in map (!! 0) $ group s
