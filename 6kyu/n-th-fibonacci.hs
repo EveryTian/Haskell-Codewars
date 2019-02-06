@@ -3,7 +3,7 @@
 module Fib where
 
 fib :: Int -> Int
-fib n = (fibList n) !! (n - 1)
+fib n = fibList n !! (n - 1)
 fibList :: Int -> [Int]
 fibList 1 = [0]
 fibList 2 = [0, 1]

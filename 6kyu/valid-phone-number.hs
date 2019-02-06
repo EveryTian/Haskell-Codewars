@@ -11,4 +11,4 @@ validPhoneNumber :: String -> Bool
 validPhoneNumber = (==) "(ddd) ddd-dddd" . f
     where f "" = ""
           f (x:xs) = (if x `elem` "0123456789" then 'd'
-                      else if x == 'd' then '\'' else x):(f xs)
+                      else if x == 'd' then '\'' else x) : f xs

@@ -7,6 +7,6 @@ import Data.Char (isDigit)
 
 yourOrderPlease :: String -> String
 yourOrderPlease = unwords . sortBy f . words
-    where f a b = let a' = (filter isDigit a) !! 0
-                      b' = (filter isDigit b) !! 0
+    where f a b = let a' = head (filter isDigit a)
+                      b' = head (filter isDigit b)
                   in compare a' b'

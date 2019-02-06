@@ -12,7 +12,7 @@ accValue :: (Eq k, Num v) => [KeyValuePair k v] -> k -> [KeyValuePair k v]
 accValue [] key = [(key, 1)]
 accValue ((k, v):xs) key
     | key == k = (k, v + 1):xs
-    | otherwise = (k, v):(accValue xs key)
+    | otherwise = (k, v) : accValue xs key
 
 deleteNth :: [Int] -> Int -> [Int]
 deleteNth = deleteNth' []
@@ -20,4 +20,4 @@ deleteNth = deleteNth' []
           deleteNth' statistics [] n = []
           deleteNth' statistics (x:xs) n
               | getValue statistics x == Just n = deleteNth' statistics xs n
-              | otherwise = x:(deleteNth' (accValue statistics x) xs n)
+              | otherwise = x : deleteNth' (accValue statistics x) xs n

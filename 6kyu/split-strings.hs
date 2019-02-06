@@ -5,10 +5,10 @@ module Codewars.Kata.SplitStrings where
 solution :: String -> [String]
 solution = solution' [] ""
     where solution' ret "" "" = ret
-          solution' ret temp ""
-              | length temp == 2 = ret ++ [temp]
-              | length temp == 1 = ret ++ [temp ++ ['_']]
-          solution' ret temp (x:xs)
-              | length temp == 2 = solution' (ret ++ [temp]) [x] xs
-              | length temp == 1 = solution' (ret ++ [temp ++ [x]]) "" xs
-              | length temp == 0 = solution' ret [x] xs
+          solution' ret temp "" = case length temp of
+              2 -> ret ++ [temp]
+              1 -> ret ++ [temp ++ ['_']]
+          solution' ret temp (x:xs) = case length temp of
+              2 -> solution' (ret ++ [temp]) [x] xs
+              1 -> solution' (ret ++ [temp ++ [x]]) "" xs
+              0 -> solution' ret [x] xs
