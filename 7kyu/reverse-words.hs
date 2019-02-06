@@ -11,7 +11,7 @@ words' ret "" "" = ret
 words' ret temp "" = words' (ret ++ [temp]) "" ""
 words' ret "" (x:xs) = words' ret [x] xs
 words' ret temp (x:xs)
-    | temp !! 0 == ' ' && x == ' ' || temp !! 0 /= ' ' && x /= ' ' = words' ret (temp ++ [x]) xs
+    | head temp == ' ' && x == ' ' || head temp /= ' ' && x /= ' ' = words' ret (temp ++ [x]) xs
     | otherwise = words' (ret ++ [temp]) [x] xs
 
 newWords :: String -> [String]
