@@ -11,10 +11,10 @@ spiralize n
 spiralize' cur mat n
     | cur > n = mat
     | otherwise = spiralize' (cur + 4)
-                             ([(take (cur) $ repeat 1)] ++
-                              [(take (cur - 1) $ repeat 0) ++ [1]] ++
+                             ([replicate cur 1] ++
+                              [replicate (cur - 1) 0 ++ [1]] ++
                               [(if i == 0 then [1, 1] else [1, 0]) ++
                                (mat !! i) ++ [0, 1] | i <- [0..length mat - 1]] ++
-                              [1:(take (cur - 2) $ repeat 0) ++ [1]] ++
-                              [(take (cur) $ repeat 1)])
+                              [1 : replicate (cur - 2) 0 ++ [1]] ++
+                              [replicate cur 1])
                              n

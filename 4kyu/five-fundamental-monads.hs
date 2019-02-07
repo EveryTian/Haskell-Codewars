@@ -37,7 +37,8 @@ instance Monad (State s) where
                                   in runState (f a) newState
 
 instance Monad (Reader s) where
-  return a = Reader $ \s -> a
+--  return a = Reader $ \s -> a
+  return = Reader . const
   (Reader g) >>= f = Reader $ \s -> runReader (f (g s)) s
 
 instance Monoid w => Monad (Writer w) where
