@@ -5,8 +5,8 @@ module BestScore.Kata (bestScore) where
 bestScore :: [Int] -> [Int] -> Int
 bestScore [] [] = 0
 bestScore a b
-    | a == [] = (-2) * length b
-    | b == [] = 3 * length a
+    | null a = (-2) * length b
+    | null b = 3 * length a
     | otherwise = maximum [scoreDiff x a b | x <- (0:1:a) ++ b ++ [maximum b + 1]] 
 
 score :: Int -> [Int] -> Int

@@ -5,4 +5,4 @@ module LookAndSay where
 import Data.List (group)
 
 lookSay :: Integer -> Integer
-lookSay = read . foldr1 (++) . map (\x -> show (length x) ++ [x !! 0]) . group . show
+lookSay = read . foldr1 (++) . map (\x -> show (length x) ++ [head x]) . group . show

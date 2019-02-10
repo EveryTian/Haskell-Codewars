@@ -9,5 +9,5 @@ data Process = Process PID [Process]
 -}
 
 makeTree :: [(PID, PID)] -> Process
-makeTree xs = f 1 xs
+makeTree = f 1
     where f p xs = Process p [f (fst i) xs | i <- xs, snd i == p]

@@ -3,11 +3,13 @@
 module Codewars.G964.Scramblies where
 
 import Data.List (sort, group)
+import Control.Arrow ((&&&))
 
-scramble :: [Char] -> [Char] -> Bool
+scramble :: String -> String -> Bool
 scramble s1 s2 =
     let f :: String -> [(Char, Int)]
-        f = map (\x -> (x !! 0, length x)) . group . sort
+--        f = map (\x -> (head x, length x)) . group . sort
+        f = map (head &&& length) . group . sort
         s1' = f s1
         s2' = f s2
     in test s1' s2'

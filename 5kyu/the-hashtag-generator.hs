@@ -11,5 +11,5 @@ generateHashtag :: String -> Maybe String
 --    where upperFstChar "" = ""
 --          upperFstChar (x:xs) = (toUpper x):xs
 generateHashtag s =
-  let ss = '#':(concat $ map (\ (x:xs) -> (toUpper x):xs) $ words s)
+  let ss = '#' : concatMap (\ (x:xs) -> toUpper x : xs) (words s)
   in if length ss > 140 || length ss == 1 then Nothing else Just ss

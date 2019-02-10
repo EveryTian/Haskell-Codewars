@@ -3,7 +3,7 @@
 module Codewars.Kata.Perimeter where
 
 perimeter :: Integer -> Integer
-perimeter = (* 4) . sum . reversedFib . (\x -> x + 1)
+perimeter = (* 4) . sum . reversedFib . (+ 1)
     where addOneToReversedFib :: [Integer] -> [Integer]
           addOneToReversedFib [] = [1]
           addOneToReversedFib [_] = [1, 1]

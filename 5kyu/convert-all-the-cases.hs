@@ -38,7 +38,7 @@ snake xs = Just $ foldl1 (\ x y -> x ++ ('_':y)) xs
 
 camel :: [String] -> Maybe String
 camel [] = Nothing
-camel xs = Just $ foldl1 (\ x (y:ys) -> x ++ (toUpper y):ys) xs
+camel xs = Just $ foldl1 (\ x (y:ys) -> x ++ toUpper y : ys) xs
 
 kebab :: [String] -> Maybe String
 kebab [] = Nothing
@@ -51,6 +51,6 @@ isNotLower = not . isLower
 indexOf :: (Char -> Bool) -> String -> Int
 indexOf charFunc string = indexOf' charFunc string 0
     where indexOf' _ [] _ = -1
-          indexOf' charFunc (x:xs) index = if charFunc x
-                                       then index
-                                       else indexOf' charFunc xs (index + 1)
+          indexOf' charFunc (x:xs) index = 
+              if charFunc x then index
+              else indexOf' charFunc xs (index + 1)
