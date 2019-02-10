@@ -11,9 +11,9 @@ findMissing arr@(x0:x1:xs) = let diff = getDiff arr
               | a0 == a1 = 0
               | otherwise = getDiff' (a1 - a0) (a1:xs)
           getDiff' diff (a0:a1:xs)
-              | (a1 - a0 == diff) = diff
-              | (a1 - a0 == 2 * diff) = diff
-              | (a1 - a0 == diff `div` 2) = a1 - a0
+              | a1 - a0 == diff = diff
+              | a1 - a0 == 2 * diff = diff
+              | a1 - a0 == diff `div` 2 = a1 - a0
           findMissing' (x0:x1:xs) diff
               | x1 - x0 == 2 * diff = x0 + diff
               | otherwise = findMissing' (x1:xs) diff
