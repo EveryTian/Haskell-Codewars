@@ -14,11 +14,12 @@ data LinkedList a = Nil | Cons a (LinkedList a)
     deriving (Eq, Show)
 
 datum :: LinkedList a -> a
-datum (Cons head _) = head
+datum (Cons h _) = h
 
 fromList :: [a] -> LinkedList a
-fromList [] = Nil
-fromList (x:xs) = Cons x $ fromList xs
+-- fromList [] = Nil
+-- fromList (x:xs) = Cons x $ fromList xs
+fromList = foldr Cons Nil
 
 isNil :: LinkedList a -> Bool
 isNil Nil = True
@@ -28,7 +29,7 @@ new :: a -> LinkedList a -> LinkedList a
 new = Cons
 
 next :: LinkedList a -> LinkedList a
-next (Cons _ tail) = tail
+next (Cons _ t) = t
 
 nil :: LinkedList a
 nil = Nil
@@ -40,4 +41,4 @@ reverseLinkedList = reverseLinkedList' Nil
 
 toList :: LinkedList a -> [a]
 toList Nil = []
-toList (Cons head tail) = head : toList tail
+toList (Cons h t) = h : toList t

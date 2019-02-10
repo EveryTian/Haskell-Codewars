@@ -2,9 +2,10 @@ module WordCount (wordCount) where
 
 import Data.List (sort, group)
 import Data.Char (isAlpha, isDigit, toLower)
+import Control.Arrow ((&&&))
 
 wordCount :: String -> [(String, Int)]
-wordCount = map (\ l -> (head l, length l)) . group . sort . map (trim '\'') . splitBy splitFunc . map toLower
+wordCount = map (head &&& length) . group . sort . map (trim '\'') . splitBy splitFunc . map toLower
     where splitFunc c = not $ isAlpha c || isDigit c || c == '\''
 
 splitBy :: (a -> Bool) -> [a] -> [[a]]
