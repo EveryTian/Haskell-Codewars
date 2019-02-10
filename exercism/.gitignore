@@ -1,5 +1,4 @@
 # From https://github.com/github/gitignore/blob/master/Haskell.gitignore
-
 dist
 dist-*
 cabal-dev
@@ -22,3 +21,6 @@ cabal.project.local
 cabal.project.local~
 .HTF/
 .ghc.environment.*
+
+# For exercism
+.exercism
