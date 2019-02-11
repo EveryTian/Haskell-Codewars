@@ -2,6 +2,7 @@ module School (School, add, empty, grade, sorted) where
 
 import Data.Maybe (fromMaybe)
 import Data.List (sortBy, sort)
+import Data.Function (on)
 
 type School = [(Int, [String])]
 
@@ -17,12 +18,12 @@ grade :: Int -> School -> [String]
 grade n s = fromMaybe [] $ lookup' n s
 
 sorted :: School -> [(Int, [String])]
-sorted = sortBy (\ x y -> compare (fst x) (fst y)) . sortStudents
+sorted = sortBy (compare `on` fst) . sortStudents
     where sortStudents [] = []
           sortStudents ((x0, x1):xs) = (x0, sort x1) : sortStudents xs
 
 lookup' :: Int -> School -> Maybe [String]
-lookup' n [] = Nothing
+lookup' _ [] = Nothing
 lookup' n ((x0, x1):xs)
     | n == x0 = Just $ sort x1
     | otherwise = lookup' n xs

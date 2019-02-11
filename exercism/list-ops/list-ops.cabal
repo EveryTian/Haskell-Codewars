@@ -1,34 +1,36 @@
--- This file has been generated from package.yaml by hpack version 0.20.0.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.0.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a0a0c54ff4e00ba174106d8810212bef0545869b393dbf49d91033531a079673
+-- hash: 7fa6733305a28b10abc0c532f1922ed38bb4b4229cae2a08d652b8b3b07607f3
 
 name:           list-ops
-version:        2.2.0.4
+version:        2.3.0.7
 build-type:     Simple
-cabal-version:  >= 1.10
 
 library
-  hs-source-dirs:
-      src
-  build-depends:
-      base
   exposed-modules:
       ListOps
   other-modules:
       Paths_list_ops
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
   default-language: Haskell2010
 
 test-suite test
   type: exitcode-stdio-1.0
   main-is: Tests.hs
+  other-modules:
+      Paths_list_ops
   hs-source-dirs:
       test
   build-depends:
       base
     , hspec
     , list-ops
-  other-modules:
-      Paths_list_ops
   default-language: Haskell2010

@@ -2,9 +2,10 @@ module RunLength (decode, encode) where
 
 import Data.List (group, groupBy)
 import Data.Char (isDigit)
+import Data.Function (on)
 
 decode :: String -> String
-decode = f . groupBy (\ x y -> isDigit x && isDigit y)
+decode = f . groupBy ((&&) `on` isDigit)
     where f [] = ""
           f [x] = x
           f [x, y] = if isDigit $ head x then replicate (read x) (head y) else x ++ y

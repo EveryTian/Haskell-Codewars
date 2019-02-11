@@ -26,9 +26,10 @@ length :: [a] -> Int
 length = foldl' (\ c _ -> c + 1) 0
 
 reverse :: [a] -> [a]
-reverse = f []
-    where f xs [] = xs
-          f xs (y:ys) = f (y:xs) ys
+-- reverse = f []
+--     where f xs [] = xs
+--           f xs (y:ys) = f (y:xs) ys
+reverse = foldl (flip (:)) []
 
 map :: (a -> b) -> [a] -> [b]
 map _ [] = []
