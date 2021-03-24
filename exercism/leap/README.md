@@ -13,9 +13,6 @@ on every year that is evenly divisible by 4
 For example, 1997 is not a leap year, but 1996 is.  1900 is not a leap
 year, but 2000 is.
 
-If your language provides a method in the standard library that does
-this look-up, pretend it doesn't exist and implement it yourself.
-
 ## Notes
 
 Though our exercise adopts some very simple rules, there is more to
@@ -28,22 +25,15 @@ phenomenon, go watch [this youtube video][video].
 
 ## Hints
 
-To complete this exercise you need to implement the function `isLeapYear`,
+To complete this exercise you need to implement the function `isLeapYear`
 that takes a year and determines whether it is a leap year.
-
-You can use the provided signature if you are unsure about the types, but
-don't let it restrict your creativity:
-
-```haskell
-isLeapYear :: Integer -> Bool
-```
 
 
 
 ## Getting Started
 
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
+Please refer to the [installation](https://exercism.io/tracks/haskell/installation)
+and [learning](https://exercism.io/tracks/haskell/learning) help pages.
 
 ## Running the tests
 
