@@ -1,0 +1,38 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: fcf65f00bbc06dcbf18d34e61e2dddab6e5a51e78b0c8f6a5fa49fbecfe6f44b
+
+name:           ocr-numbers
+version:        1.2.0.6
+build-type:     Simple
+
+library
+  exposed-modules:
+      OCR
+  other-modules:
+      Paths_ocr_numbers
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      MissingH
+    , base
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_ocr_numbers
+  hs-source-dirs:
+      test
+  build-depends:
+      MissingH
+    , base
+    , hspec
+    , ocr-numbers
+  default-language: Haskell2010
